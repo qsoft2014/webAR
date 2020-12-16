@@ -1,5 +1,3 @@
-<html>
-
 <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
@@ -16,13 +14,33 @@
     justify-content: center;
     align-items: center;
   }
-
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
     color: white;
   }
 </style>
+
+<script>
+  AFRAME.registerComponent('p19', {
+    init: function () {
+      this.el.sceneEl.addEventListener('markerFound', () => {
+        // redirect to custom URL
+        window.location = 'https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p19_20200420_tobira.mp4';
+        //window.open('http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4', '_blank');
+      });
+    }
+  });
+  AFRAME.registerComponent('p21', {
+    init: function () {
+      this.el.sceneEl.addEventListener('markerFound', () => {
+        // redirect to custom URL
+        window.location = 'http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4';
+        //window.open('http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4', '_blank');
+      });
+    }
+  });
+</script>
 
 <body style="margin : 0px; overflow: hidden;">
   <!-- minimal loader shown until image descriptors are loaded -->
@@ -36,29 +54,21 @@
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
     <!-- we use cors proxy to avoid cross-origin problems -->
+    <!-- we use the trex image shown on the homepage of the docs -->
     <a-nft
+      p21
       type="nft"
       url="https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p21"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
     >
-      <a-link
-        href="http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4"
-        title="nougakuka"
-      >
-        <a-entity
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-          scale="5 5 5"
-          position="50 150 0"
-        >
-        </a-entity>
-      </a-link>
-
     </a-nft>
+    <a-nft
+      p19
+      type="nft"
+      url="https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p19"
+    >
+    </a-nft>
+
+
     <a-entity camera></a-entity>
   </a-scene>
 </body>
-
-</html>

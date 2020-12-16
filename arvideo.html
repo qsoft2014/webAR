@@ -1,0 +1,112 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+</style>
+
+<script>
+  AFRAME.registerComponent('imagehandler',{
+    schema : {},
+    init : function(){
+      this.el.addEventListener('mousedown',function(e){
+        console.log(e.target.className);
+        if(e.target.className == "p19"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p19_20200420_tobira.mp4";
+        }
+        if(e.target.className == "p21"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4";
+        }
+        if(e.target.className == "p25"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s2.mp4";
+        }
+
+      })
+    }
+  })
+</script>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        renderer='antialias: true; alpha: true; precision: mediump;'
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+        <a-assets>
+            <img
+              crossorigin
+              id="player"
+              src="https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/image/player.jpg"
+            >
+        </a-assets>
+
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p19'
+            smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p19"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p21'
+            smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p21"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p25'
+            smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p25"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+
+		<a-entity camera>
+      <a-entity cursor="fuse: true; fuseTimeout: 5000"></a-entity>
+    </a-entity>
+	</a-scene>
+</body>
