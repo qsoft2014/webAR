@@ -115,7 +115,6 @@
       })
     }
   })
-
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -124,8 +123,8 @@
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
-        renderer='antialias: true; alpha: true; precision: mediump;'
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        renderer='logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: mediump;'
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: true;'>
 
         <a-assets>
             <img
@@ -218,6 +217,36 @@
         >
             <a-image
               class="p39"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p43'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p43"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p47'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p47"
               src="#player"
               height="118"
               width="196"

@@ -115,7 +115,6 @@
       })
     }
   })
-
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -124,8 +123,8 @@
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
-        renderer='antialias: true; alpha: true; precision: mediump;'
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+        renderer='logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: mediump;'
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: true;'>
 
         <a-assets>
             <img
@@ -137,11 +136,11 @@
 
         <a-nft
             imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p19'
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p140'
             smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
             <a-image
-              class="p19"
+              class="p140"
               src="#player"
               height="118"
               width="196"
@@ -152,11 +151,11 @@
         </a-nft>
         <a-nft
             imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p21'
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p140-2'
             smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
             <a-image
-              class="p21"
+              class="p140-2"
               src="#player"
               height="118"
               width="196"
@@ -167,11 +166,11 @@
         </a-nft>
         <a-nft
             imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p25'
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p144'
             smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
             <a-image
-              class="p25"
+              class="p144"
               src="#player"
               height="118"
               width="196"
@@ -182,42 +181,11 @@
         </a-nft>
         <a-nft
             imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p29'
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p148'
             smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
         >
             <a-image
-              class="p29"
-              src="#player"
-              height="118"
-              width="196"
-              position="100 50 0"
-              rotation="-90 0 0"
-            >
-            </a-image>
-        </a-nft>
-        <a-nft
-            imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p33'
-            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
-        >
-            <a-image
-              class="p33"
-              src="#player"
-              height="118"
-              width="196"
-              position="100 50 0"
-              rotation="-90 0 0"
-            >
-            </a-image>
-        </a-nft>
-
-        <a-nft
-            imagehandler
-            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p39'
-            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
-        >
-            <a-image
-              class="p39"
+              class="p148"
               src="#player"
               height="118"
               width="196"

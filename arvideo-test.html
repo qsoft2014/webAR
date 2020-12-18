@@ -1,0 +1,563 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
+
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+</style>
+
+<script>
+  AFRAME.registerComponent('imagehandler',{
+    schema : {},
+    init : function(){
+      this.el.addEventListener('mousedown',function(e){
+        console.log(e.target.className);
+        if(e.target.className == "p19"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p19_20200420_tobira.mp4";
+        }
+        if(e.target.className == "p21"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s1.mp4";
+        }
+        if(e.target.className == "p25"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s2.mp4";
+        }
+        if(e.target.className == "p29"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s3.mp4";
+        }
+        if(e.target.className == "p33"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/2019s0104.mp4";
+        }
+        if(e.target.className == "p39"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s5_2018.mp4";
+        }
+        if(e.target.className == "p43"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s6.mp4";
+        }
+        if(e.target.className == "p47"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s7.mp4";
+        }
+        if(e.target.className == "p51"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s8.mp4";
+        }
+        if(e.target.className == "p57"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s9.mp4";
+        }
+        if(e.target.className == "p61"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s10.mp4";
+        }
+        if(e.target.className == "p65"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s11.mp4";
+        }
+        if(e.target.className == "p71"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s12.mp4";
+        }
+        if(e.target.className == "p75"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s13.mp4";
+        }
+        if(e.target.className == "p79"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s14.mp4";
+        }
+        if(e.target.className == "p83"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/2019s0404.mp4";
+        }
+        if(e.target.className == "p89"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p89_20200410.mp4";
+        }
+        if(e.target.className == "p93"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s17.mp4";
+        }
+        if(e.target.className == "p97"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s18.mp4";
+        }
+        if(e.target.className == "p101"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/2019s0501.mp4";
+        }
+        if(e.target.className == "p107"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s20.mp4";
+        }
+        if(e.target.className == "p111"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s21.mp4";
+        }
+        if(e.target.className == "p115"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s22.mp4";
+        }
+        if(e.target.className == "p119"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/s23.mp4";
+        }
+        if(e.target.className == "p140"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p140_20200410_setagaya.mp4";
+        }
+        if(e.target.className == "p140-2"){
+          window.location.href = "http://movie.nodai.ac.jp.s3-ap-northeast-1.amazonaws.com/movie/2018c02_2019.mp4";
+        }
+        if(e.target.className == "p144"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p144_20200420_ikimono.mp4";
+        }
+        if(e.target.className == "p148"){
+          window.location.href = "https://s3-ap-northeast-1.amazonaws.com/movie.nodai.ac.jp/movie/p148_20200420_hokkaido.mp4";
+        }
+
+      })
+    }
+  })
+</script>
+
+<body style='margin : 0px; overflow: hidden;'>
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
+    <a-scene
+        vr-mode-ui="enabled: false;"
+        renderer='logarithmicDepthBuffer: true; antialias: true; alpha: true; precision: mediump;'
+        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: true;'>
+
+        <a-assets>
+            <img
+              crossorigin
+              id="player"
+              src="https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/image/player.jpg"
+            >
+        </a-assets>
+
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p19'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p19"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p21'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p21"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p25'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p25"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p29'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p29"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p33'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p33"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+
+        <a-nft
+            imagehandler
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p39'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p39"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p43'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p43"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p47'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p47"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p51'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p51"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p57'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p57"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p61'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p61"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler2
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p65'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p65"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p71'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p71"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p75'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p75"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p79'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p79"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p83'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p83"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p89'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p89"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler3
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p93'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p93"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p97'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p97"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p101'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p101"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p107'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p107"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p111'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p111"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p115'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p115"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler4
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p119'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p119"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler5
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p140'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p140"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler5
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p140-2'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p140-2"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler5
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p144'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p144"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+        <a-nft
+            imagehandler5
+            type='nft' url='https://tounoudai-ar.s3-ap-northeast-1.amazonaws.com/imagetracking/p148'
+            smooth="false" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+        >
+            <a-image
+              class="p148"
+              src="#player"
+              height="118"
+              width="196"
+              position="100 50 0"
+              rotation="-90 0 0"
+            >
+            </a-image>
+        </a-nft>
+
+		<a-entity camera>
+      <a-entity cursor="fuse: true; fuseTimeout: 5000"></a-entity>
+    </a-entity>
+	</a-scene>
+</body>
